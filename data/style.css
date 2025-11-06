@@ -1,0 +1,340 @@
+body {
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', Arial, sans-serif;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Bar */
+.top{
+    position: fixed;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0);
+    z-index: 1000;
+    width: 100%;
+    height: 80px;
+    border-radius: 0 0 15px 15px;
+    opacity: 1;
+    top: 0;
+}
+.top-clock {
+    color: #e3e3e3;
+    font-size: 2em;
+    font-family: 'Saira', Arial, sans-serif;
+    margin-right: auto;
+    margin-left: 20px;
+}
+.top svg{
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    padding: 5px;
+    margin-right: 20px;
+}
+.top svg:hover {
+    transform: scale(1.2);
+}
+
+/* Header */
+.header{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 100px;
+    align-items: flex-end;
+}
+.header-main{
+    height: 500px;
+    width: 1400px;
+    background-image: url(./assets/micomet.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    position: relative;
+}
+.header-main-title{
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+    font-size: 3.5em;
+    color: white;
+    font-family: 'Saira', Arial, sans-serif;
+    white-space: pre;
+}
+.header-sub{
+    height: 220px;
+    width: 600px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.header-main, .header-sub {
+    opacity: 1;
+    background-color: #424242;
+    border-radius: 30px;
+}
+
+/* Header Buttons */
+.header-btn-group {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 5px 5px;
+    gap: 10px;
+}
+.header-btn {
+    width: 280px;
+    height: 90px;
+    border-radius: 25px;
+    background-color: #707070;
+    border: none;
+    cursor: pointer;
+
+    display: relative;
+    font-size: 1.7em;
+    color: rgb(255, 255, 255);
+    font-family: 'Saira', Arial, sans-serif;
+    padding-top: 25px;
+    padding-left: 15px;
+    text-align: left;
+}
+.header-btn:hover {
+    transform: scale(1.05);
+}
+
+#header-btn-about {
+    background-color: #c4f7c88f;
+}
+#header-btn-links {
+    background-color: #9bf8c594;
+}
+#header-btn-tutorial {
+    background-color: #9ffafd91;
+}
+#header-btn-project {
+    background-color: #abf7f788;
+}
+
+/* Header Note */
+#header-note:hover {
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+}
+
+/* Content Wrapper (Notes & Side Cards) */
+.content-wrapper {
+    width: 100%;
+    max-width: 1800px;
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 0 40px;
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+/* Side Cards (Content Wrapper Right) */
+.side-cards {
+    margin: 0;
+    flex-shrink: 0;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.side-cards > div {
+    border-radius: 35px;
+    text-align: center;
+    gap: 10px;
+    overflow: hidden;
+    width: 450px;
+    box-sizing: border-box;
+}
+
+/* Side Card - Normal */
+.side-about {
+    position: relative;
+    z-index: 2;
+}
+
+/* Side Card - Pin */
+.side-notes {
+  position: sticky;
+  top: 10vh;
+  max-height: 75vh;
+  overflow-y: auto;
+  z-index: 2;
+}
+
+.side-tags {
+  position: sticky;
+  top: calc(10vh + 260px); /* 視實際卡片高度微調 */
+  max-height: 75vh;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+.side-online-timer {
+  position: sticky;
+  top: calc(10vh + 470px); /* 視實際卡片高度微調 */
+  max-height: 75vh;
+  overflow-y: auto;
+  z-index: 1;
+}
+
+/* Side Card - About */
+.side-about {   
+    height: 220px;
+    background-color: #c2f8b188;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+.side-about-text {
+    position: absolute;
+    top: 25px;
+    left: 30px;
+    font-size: 2.5em;
+    color: #ffffff;
+    font-family: 'Saira', Arial, sans-serif;
+    z-index: 2;
+}
+.side-about-text-sub {
+    position: absolute;
+    top: 80px;
+    left: 50px;
+    font-size: 1.6em;
+    font-style: italic;
+    color: #e1fae2;
+    font-family: 'Saira', Arial, sans-serif;
+    z-index: 2;
+}
+.side-about img {
+    padding: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+.side-about-icon {
+   position: relative;
+   bottom: 20px;
+   left: 20px;
+   background-color: #b0cbb7;
+    border-radius: 50%; 
+}
+.side-about-icon:hover {
+    transform: scale(1.1);
+}
+.side-about-arrow {
+    position: relative;
+    width: 130px;
+    bottom: -10px;
+    left: 280px;
+    background-color: #80ae8e;
+    border-radius: 50% 0 20% 30%;
+}
+.side-about-arrow:hover {
+    transform: translateX(-20px);
+}
+
+/* Side Card - Notes */
+.side-notes {
+    height: 250px;
+    background-color: #70707088;
+}
+
+/* Side Card - Tags */
+.side-tags {
+    height: 200px;
+    background-color: #70707088;
+}
+
+/* Side Card - Timer */
+.side-online-timer {
+    width: 350px;
+    background-color: #424242;
+    font-family: "Saira", Arial, sans-serif;
+    color: white;
+    text-align: center;
+    padding-block: 20px;
+    overflow: hidden;
+    z-index: 0;
+}
+.side-online-timer::after {
+  content: "";
+  position: absolute;
+  bottom: -60px;
+  right: -70px;
+  width: 200px;
+  height: 200px;
+  background: url(./assets/clock.svg) no-repeat bottom right / contain;
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* Notes Container (Content Wrapper Left) */
+.notes-container {
+    flex: 1;
+    margin: 0;
+    margin-left: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    gap: 20px;
+    padding: 20px;
+}
+
+.note-item {
+    font-family: 'Saira', Arial, sans-serif;
+    background-color: #424242;
+    border-radius: 35px;
+    width: auto;
+    height: 500px;
+    opacity: 1;
+    z-index: 100;
+}
+.note-item img{
+    position: relative;
+    width: 400px;
+    min-height: 200px;
+    border-radius: 35px 35px 0 0;
+    object-fit: cover;
+}
+.note-item-topic {
+    position: relative;
+    color: #c9c9c9;
+    font-size: 1.4em;
+    top: 15px;
+    left: 30px
+}
+
+.note-item-title {
+    position: relative;
+    color: #ffffff;
+    font-size: 2.4em;
+    top: 15px;
+    left: 25px;
+    overflow: hidden;
+    width: 350px;
+    height: 110px;
+    word-break: break-all;
+}
+
+.note-item-tags {
+    position: relative;
+    color: #ffffff;
+    font-size: 1.4em;
+    top: 80px;
+    left: 25px;
+    height: 30px;
+    width: 250px;
+    overflow: hidden;
+}
