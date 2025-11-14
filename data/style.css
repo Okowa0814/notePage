@@ -1,6 +1,6 @@
 body {
     box-sizing: border-box;
-    font-family: 'Noto Sans TC', Arial, sans-serif;
+    font-family: 'Saira', Arial, sans-serif;
     background-color: #262626;
     display: flex;
     flex-direction: column;
@@ -123,11 +123,6 @@ body {
     background-color: #abf7f788;
 }
 
-/* Header Note */
-#header-note:hover {
-    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
-}
-
 /* Content Wrapper (Notes & Side Cards) */
 .content-wrapper {
     width: 100%;
@@ -156,7 +151,7 @@ body {
     text-align: center;
     gap: 10px;
     overflow: hidden;
-    width: 450px;
+    width: 500px;
     box-sizing: border-box;
 }
 
@@ -167,7 +162,7 @@ body {
 }
 
 /* Side Card - Pin */
-.side-notes {
+.side-tags {
   position: sticky;
   top: 10vh;
   max-height: 75vh;
@@ -175,9 +170,9 @@ body {
   z-index: 2;
 }
 
-.side-tags {
+.side-notes {
   position: sticky;
-  top: calc(10vh + 260px); /* 視實際卡片高度微調 */
+  top: calc(10vh + 275px); /* 視實際卡片高度微調 */
   max-height: 75vh;
   overflow-y: auto;
   z-index: 1;
@@ -185,7 +180,7 @@ body {
 
 .side-online-timer {
   position: sticky;
-  top: calc(10vh + 470px); /* 視實際卡片高度微調 */
+  top: calc(10vh + 535px); /* 視實際卡片高度微調 */
   max-height: 75vh;
   overflow-y: auto;
   z-index: 1;
@@ -238,7 +233,7 @@ body {
     position: relative;
     width: 130px;
     bottom: -10px;
-    left: 280px;
+    left: 330px;
     background-color: #80ae8e;
     border-radius: 50% 0 20% 30%;
 }
@@ -254,8 +249,67 @@ body {
 
 /* Side Card - Tags */
 .side-tags {
-    height: 200px;
+    display: flex;
+    height: fit-content;
     background-color: #70707088;
+    padding: 10px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.side-tags-title {
+    font-family: "Saira", Arial, sans-serif;
+    color: white;
+    font-size: 2.5em;
+    margin: 15px;
+
+}
+
+.side-tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.tag-item {
+    font-family: "Saira", Arial, sans-serif;
+    color: white;
+    background-color: #424242;
+    border-radius: 20px;
+    margin: 2px;
+    font-size: 1.5em;
+    cursor: pointer;
+    height: fit-content;
+    box-sizing: border-box;
+    padding: 10px 12px;
+
+    /* 改為 grid：文字在左（可換行），badge 在右（保持同一行） */
+    display: inline-grid;
+    grid-template-columns: 1fr auto;
+    gap: 8px;
+    align-items: center;
+    max-width: 260px; /* 可視需要調整每個標籤最大寬度 */
+}
+
+.tag-item-label {
+    white-space: normal; /* 允許換行 */
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.tag-item-count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    color: #d3d3d3;
+    border-radius: 50%;
+    background-color: #616161;
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+    flex: none;
 }
 
 /* Side Card - Timer */
@@ -300,6 +354,7 @@ body {
     height: 500px;
     opacity: 1;
     z-index: 100;
+    cursor: pointer;
 }
 .note-item img{
     position: relative;
@@ -335,6 +390,8 @@ body {
     top: 80px;
     left: 25px;
     height: 30px;
-    width: 250px;
+    width: 300px;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
     overflow: hidden;
 }
