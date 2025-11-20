@@ -1,39 +1,106 @@
+.note-page-container {
+    display: flex;
+
+    width: 100vh;
+    height: 100vh;
+}
+
+/* 筆記標題（整份筆記的主標題） */
 .note-title {
-
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #1e1e1e;
 }
 
+/* 內容標題（大章節） */
 .note-content-title {
-
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 1.8rem 0 0.8rem;
+    color: #2b3a67;
 }
 
-.note-content-subtitle {
-
+/* 內容小標題（小節） */
+note-content-subtitle {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 1rem 0 0.5rem;
+    color: #445b97;
 }
 
+/* 內容文字 */
 .note-content-text {
-
+    font-size: 1rem;
+    line-height: 1.75;
+    margin: 0.5rem 0;
+    color: #333;
 }
 
-.note-content-table {
-
+/* 重點表格（適用於像「要點整理」類型的表格） */
+.note-content-point-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    font-size: 0.95rem;
 }
 
+.note-content-point-table th,
+.note-content-point-table td {
+    border: 1px solid #dddddd;
+    padding: 10px;
+}
+
+.note-content-point-table th {
+    background: #f4f6fb;
+    font-weight: 600;
+}
+
+/* 內容圖片 */
 .note-content-img {
-
+    width: 100%;
+    border-radius: 8px;
+    margin: 1rem 0;
 }
 
+/* 程式碼框 */
 .note-content-code {
-
+    background: #1e1e1e;
+    color: #ffffff;
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.9rem;
+    overflow-x: auto;
+    margin: 1rem 0;
 }
 
+/* 心得、備註塊 */
 .note-mind {
-
+    background: #fff9d6;
+    border-left: 5px solid #f7d248;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    color: #614e00;
 }
 
+/* 注意事項 */
 .note-care {
-
+    background: #e7f3ff;
+    border-left: 5px solid #4a90e2;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    color: #0b3358;
 }
 
+/* 警告區塊 */
 .note-warning {
-
+    background: #ffe8e8;
+    border-left: 5px solid #e63946;
+    padding: 1rem;
+    border-radius: 6px;
+    margin: 1rem 0;
+    color: #8a1a1a;
 }
